@@ -9,33 +9,47 @@
   <meta name="author" content="revdev">
   <meta name="copyright" content="RevDev Group">
   <link rel="stylesheet" href="assets/css/inter/inter.css">
-  <link rel="stylesheet" href="assets/font/line-awesome/line-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/line-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="favicon.ico">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBRD4ECYZW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BBRD4ECYZW');
+  </script>
 </head>
 
 <body>
   <div class="container is-fluid">
-    <nav class="navbar is-transparent is-spaced">
+    <nav class="navbar is-transparent is-spaced" role="navigation">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="#">
             <img src="assets/img/logo.svg" width="112" height="28">
           </a>
-          <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+          <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarMain">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div class="navbar-menu">
+        <div id="navbarMain" class="navbar-menu">
           <div class="navbar-start has-text-weight-bold">
             <a class="navbar-item" href="#">Inicio</a>
             <a class="navbar-item" href="#">Servicios</a>
             <a class="navbar-item" href="#">Projectos</a>
             <a class="navbar-item" href="#">Laboratorio</a>
             <a class="navbar-item" href="#">Contáctanos</a>
-            <a class="navbar-item" href="#">Github</a>
+            <a class="navbar-item" href="#">
+              <span class="icon">
+                <i class="lab la-github"></i>
+              </span>Github
+            </a>
           </div>
         </div>
       </div>
@@ -67,9 +81,20 @@
       <hr>
       <div class="columns">
         <div class="column">
-          <div class="buttons"><a class="button" href="#"><img src="assets/img/icons/twitter.svg" alt=""></a><a
-              class="button" href="#"><img src="assets/img/icons/facebook-f.svg" alt=""></a><a class="button"
-              href="#"><img src="assets/img/icons/instagram.svg" alt=""></a></div>
+          <div class="buttons">
+            <a class="button icon" href="#">
+              <i class="lab la-twitter"></i>
+            </a>
+            <a class="button icon" href="#">
+              <i class="lab la-telegram-plane"></i>
+            </a>
+            <a class="button icon" href="#">
+              <i class="lab la-facebook"></i>
+            </a>
+            <a class="button icon" href="#">
+              <i class="lab la-instagram"></i>
+            </a>
+          </div>
         </div>
         <div class="column has-text-centered has-text-right-tablet">
           <p class="subtitle is-6">&copy; 2021 RevDev Group. All right reserved.</p>
@@ -80,4 +105,5 @@
 </body>
 <script src="assets/js/anime.min.js"></script>
 <script src="assets/js/main.js"></script>
+
 </html>
