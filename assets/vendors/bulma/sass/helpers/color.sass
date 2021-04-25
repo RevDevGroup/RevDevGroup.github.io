@@ -1,25 +1,27 @@
-@import "../utilities/derived-variables"
+@use "sass:list"
+@use "../utilities/derived-variables"
+@use "../utilities/functions"
 
-@each $name, $pair in $colors
-  $color: nth($pair, 1)
+@each $name, $pair in derived-variables.$colors
+  $color: list.nth($pair, 1)
   .has-text-#{$name}
     color: $color !important
   a.has-text-#{$name}
     &:hover,
     &:focus
-      color: bulmaDarken($color, 10%) !important
+      color: functions.bulmaDarken($color, 10%) !important
   .has-background-#{$name}
     background-color: $color !important
-  @if length($pair) >= 4
-    $color-light: nth($pair, 3)
-    $color-dark: nth($pair, 4)
+  @if list.length($pair) >= 4
+    $color-light: list.nth($pair, 3)
+    $color-dark: list.nth($pair, 4)
     // Light
     .has-text-#{$name}-light
       color: $color-light !important
     a.has-text-#{$name}-light
       &:hover,
       &:focus
-        color: bulmaDarken($color-light, 10%) !important
+        color: functions.bulmaDarken($color-light, 10%) !important
     .has-background-#{$name}-light
       background-color: $color-light !important
     // Dark
@@ -28,11 +30,11 @@
     a.has-text-#{$name}-dark
       &:hover,
       &:focus
-        color: bulmaLighten($color-dark, 10%) !important
+        color: functions.bulmaLighten($color-dark, 10%) !important
     .has-background-#{$name}-dark
       background-color: $color-dark !important
 
-@each $name, $shade in $shades
+@each $name, $shade in derived-variables.$shades
   .has-text-#{$name}
     color: $shade !important
   .has-background-#{$name}

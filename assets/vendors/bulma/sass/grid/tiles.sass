@@ -1,4 +1,4 @@
-@import "../utilities/mixins"
+@use "../utilities/mixins"
 
 $tile-spacing: 0.75rem !default
 
@@ -27,7 +27,7 @@ $tile-spacing: 0.75rem !default
     & > .tile.is-child:not(:last-child)
       margin-bottom: 1.5rem !important
   // Responsiveness
-  +tablet
+  +mixins.tablet
     &:not(.is-child)
       display: flex
     @for $i from 1 through 12
