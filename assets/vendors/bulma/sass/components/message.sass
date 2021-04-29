@@ -1,37 +1,31 @@
-@use "sass:color"
-@use "sass:list"
-@use "sass:math"
-@use "../utilities/mixins"
-@use "../utilities/derived-variables"
-@use "../utilities/functions"
-@use "../utilities/initial-variables"
+@import "../utilities/mixins"
 
-$message-background-color: derived-variables.$background !default
-$message-radius: initial-variables.$radius !default
+$message-background-color: $background !default
+$message-radius: $radius !default
 
-$message-header-background-color: derived-variables.$text !default
-$message-header-color: derived-variables.$text-invert !default
-$message-header-weight: initial-variables.$weight-bold !default
+$message-header-background-color: $text !default
+$message-header-color: $text-invert !default
+$message-header-weight: $weight-bold !default
 $message-header-padding: 0.75em 1em !default
-$message-header-radius: initial-variables.$radius !default
+$message-header-radius: $radius !default
 
-$message-body-border-color: derived-variables.$border !default
+$message-body-border-color: $border !default
 $message-body-border-width: 0 0 0 4px !default
-$message-body-color: derived-variables.$text !default
+$message-body-color: $text !default
 $message-body-padding: 1.25em 1.5em !default
-$message-body-radius: initial-variables.$radius !default
+$message-body-radius: $radius !default
 
-$message-body-pre-background-color: derived-variables.$scheme-main !default
+$message-body-pre-background-color: $scheme-main !default
 $message-body-pre-code-background-color: transparent !default
 
 $message-header-body-border-width: 0 !default
-$message-colors: derived-variables.$colors !default
+$message-colors: $colors !default
 
 .message
   @extend %block
   background-color: $message-background-color
   border-radius: $message-radius
-  font-size: derived-variables.$size-normal
+  font-size: $size-normal
   strong
     color: currentColor
   a:not(.button):not(.tag):not(.dropdown-item)
@@ -39,30 +33,30 @@ $message-colors: derived-variables.$colors !default
     text-decoration: underline
   // Sizes
   &.is-small
-    font-size: derived-variables.$size-small
+    font-size: $size-small
   &.is-medium
-    font-size: derived-variables.$size-medium
+    font-size: $size-medium
   &.is-large
-    font-size: derived-variables.$size-large
+    font-size: $size-large
   // Colors
   @each $name, $components in $message-colors
-    $color: list.nth($components, 1)
-    $color-invert: list.nth($components, 2)
+    $color: nth($components, 1)
+    $color-invert: nth($components, 2)
     $color-light: null
     $color-dark: null
 
-    @if list.length($components) >= 3
-      $color-light: list.nth($components, 3)
-      @if list.length($components) >= 4
-        $color-dark: list.nth($components, 4)
+    @if length($components) >= 3
+      $color-light: nth($components, 3)
+      @if length($components) >= 4
+        $color-dark: nth($components, 4)
       @else
-        $color-luminance: functions.colorLuminance($color)
+        $color-luminance: colorLuminance($color)
         $darken-percentage: $color-luminance * 70%
         $desaturate-percentage: $color-luminance * 30%
-        $color-dark: color.adjust(color.adjust($color, $lightness: -$darken-percentage), $saturation: -$desaturate-percentage)
+        $color-dark: desaturate(darken($color, $darken-percentage), $desaturate-percentage)
     @else
-      $color-lightning: math.max((100% - color.lightness($color)) - 2%, 0%)
-      $color-light: color.adjust($color, $lightness: $color-lightning)
+      $color-lightning: max((100% - lightness($color)) - 2%, 0%)
+      $color-light: lighten($color, $color-lightning)
 
     &.is-#{$name}
       background-color: $color-light
@@ -87,7 +81,7 @@ $message-colors: derived-variables.$colors !default
   .delete
     flex-grow: 0
     flex-shrink: 0
-    +mixins.ltr-property("margin", 0.75em, false)
+    +ltr-property("margin", 0.75em, false)
   & + .message-body
     border-width: $message-header-body-border-width
     border-top-left-radius: 0

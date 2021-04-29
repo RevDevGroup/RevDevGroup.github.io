@@ -1,42 +1,40 @@
-@use "../utilities/mixins"
-@use "../utilities/derived-variables"
-@use "../utilities/initial-variables"
+@import "../utilities/mixins"
 
-$tabs-border-bottom-color: derived-variables.$border !default
+$tabs-border-bottom-color: $border !default
 $tabs-border-bottom-style: solid !default
 $tabs-border-bottom-width: 1px !default
-$tabs-link-color: derived-variables.$text !default
-$tabs-link-hover-border-bottom-color: derived-variables.$text-strong !default
-$tabs-link-hover-color: derived-variables.$text-strong !default
-$tabs-link-active-border-bottom-color: derived-variables.$link !default
-$tabs-link-active-color: derived-variables.$link !default
+$tabs-link-color: $text !default
+$tabs-link-hover-border-bottom-color: $text-strong !default
+$tabs-link-hover-color: $text-strong !default
+$tabs-link-active-border-bottom-color: $link !default
+$tabs-link-active-color: $link !default
 $tabs-link-padding: 0.5em 1em !default
 
-$tabs-boxed-link-radius: initial-variables.$radius !default
-$tabs-boxed-link-hover-background-color: derived-variables.$background !default
-$tabs-boxed-link-hover-border-bottom-color: derived-variables.$border !default
+$tabs-boxed-link-radius: $radius !default
+$tabs-boxed-link-hover-background-color: $background !default
+$tabs-boxed-link-hover-border-bottom-color: $border !default
 
-$tabs-boxed-link-active-background-color: derived-variables.$scheme-main !default
-$tabs-boxed-link-active-border-color: derived-variables.$border !default
+$tabs-boxed-link-active-background-color: $scheme-main !default
+$tabs-boxed-link-active-border-color: $border !default
 $tabs-boxed-link-active-border-bottom-color: transparent !default
 
-$tabs-toggle-link-border-color: derived-variables.$border !default
+$tabs-toggle-link-border-color: $border !default
 $tabs-toggle-link-border-style: solid !default
 $tabs-toggle-link-border-width: 1px !default
-$tabs-toggle-link-hover-background-color: derived-variables.$background !default
-$tabs-toggle-link-hover-border-color: derived-variables.$border-hover !default
-$tabs-toggle-link-radius: initial-variables.$radius !default
-$tabs-toggle-link-active-background-color: derived-variables.$link !default
-$tabs-toggle-link-active-border-color: derived-variables.$link !default
-$tabs-toggle-link-active-color: derived-variables.$link-invert !default
+$tabs-toggle-link-hover-background-color: $background !default
+$tabs-toggle-link-hover-border-color: $border-hover !default
+$tabs-toggle-link-radius: $radius !default
+$tabs-toggle-link-active-background-color: $link !default
+$tabs-toggle-link-active-border-color: $link !default
+$tabs-toggle-link-active-color: $link-invert !default
 
 .tabs
   @extend %block
-  +mixins.overflow-touch
+  +overflow-touch
   @extend %unselectable
   align-items: stretch
   display: flex
-  font-size: derived-variables.$size-normal
+  font-size: $size-normal
   justify-content: space-between
   overflow: hidden
   overflow-x: auto
@@ -82,9 +80,9 @@ $tabs-toggle-link-active-color: derived-variables.$link-invert !default
       padding-left: 0.75em
   .icon
     &:first-child
-      +mixins.ltr-property("margin", 0.5em)
+      +ltr-property("margin", 0.5em)
     &:last-child
-      +mixins.ltr-property("margin", 0.5em, false)
+      +ltr-property("margin", 0.5em, false)
   // Alignment
   &.is-centered
     ul
@@ -96,9 +94,9 @@ $tabs-toggle-link-active-color: derived-variables.$link-invert !default
   &.is-boxed
     a
       border: 1px solid transparent
-      +mixins.ltr
+      +ltr
         border-radius: $tabs-boxed-link-radius $tabs-boxed-link-radius 0 0
-      +mixins.rtl
+      +rtl
         border-radius: 0 0 $tabs-boxed-link-radius $tabs-boxed-link-radius
       &:hover
         background-color: $tabs-boxed-link-hover-background-color
@@ -126,19 +124,19 @@ $tabs-toggle-link-active-color: derived-variables.$link-invert !default
         z-index: 2
     li
       & + li
-        +mixins.ltr-property("margin", -#{$tabs-toggle-link-border-width}, false)
+        +ltr-property("margin", -#{$tabs-toggle-link-border-width}, false)
       &:first-child a
-        +mixins.ltr
+        +ltr
           border-top-left-radius: $tabs-toggle-link-radius
           border-bottom-left-radius: $tabs-toggle-link-radius
-        +mixins.rtl
+        +rtl
           border-top-right-radius: $tabs-toggle-link-radius
           border-bottom-right-radius: $tabs-toggle-link-radius
       &:last-child a
-        +mixins.ltr
+        +ltr
           border-top-right-radius: $tabs-toggle-link-radius
           border-bottom-right-radius: $tabs-toggle-link-radius
-        +mixins.rtl
+        +rtl
           border-top-left-radius: $tabs-toggle-link-radius
           border-bottom-left-radius: $tabs-toggle-link-radius
       &.is-active
@@ -152,27 +150,27 @@ $tabs-toggle-link-active-color: derived-variables.$link-invert !default
     &.is-toggle-rounded
       li
         &:first-child a
-          +mixins.ltr
-            border-bottom-left-radius: initial-variables.$radius-rounded
-            border-top-left-radius: initial-variables.$radius-rounded
+          +ltr
+            border-bottom-left-radius: $radius-rounded
+            border-top-left-radius: $radius-rounded
             padding-left: 1.25em
-          +mixins.rtl
-            border-bottom-right-radius: initial-variables.$radius-rounded
-            border-top-right-radius: initial-variables.$radius-rounded
+          +rtl
+            border-bottom-right-radius: $radius-rounded
+            border-top-right-radius: $radius-rounded
             padding-right: 1.25em
         &:last-child a
-          +mixins.ltr
-            border-bottom-right-radius: initial-variables.$radius-rounded
-            border-top-right-radius: initial-variables.$radius-rounded
+          +ltr
+            border-bottom-right-radius: $radius-rounded
+            border-top-right-radius: $radius-rounded
             padding-right: 1.25em
-          +mixins.rtl
-            border-bottom-left-radius: initial-variables.$radius-rounded
-            border-top-left-radius: initial-variables.$radius-rounded
+          +rtl
+            border-bottom-left-radius: $radius-rounded
+            border-top-left-radius: $radius-rounded
             padding-left: 1.25em
   // Sizes
   &.is-small
-    font-size: derived-variables.$size-small
+    font-size: $size-small
   &.is-medium
-    font-size: derived-variables.$size-medium
+    font-size: $size-medium
   &.is-large
-    font-size: derived-variables.$size-large
+    font-size: $size-large

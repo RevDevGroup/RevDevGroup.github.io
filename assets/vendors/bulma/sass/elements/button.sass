@@ -1,65 +1,61 @@
-@use "sass:list"
-@use "../utilities/controls"
-@use "../utilities/mixins"
-@use "../utilities/derived-variables"
-@use "../utilities/functions"
-@use "../utilities/initial-variables"
+@import "../utilities/controls"
+@import "../utilities/mixins"
 
-$button-color: derived-variables.$text-strong !default
-$button-background-color: derived-variables.$scheme-main !default
+$button-color: $text-strong !default
+$button-background-color: $scheme-main !default
 $button-family: false !default
 
-$button-border-color: derived-variables.$border !default
-$button-border-width: controls.$control-border-width !default
+$button-border-color: $border !default
+$button-border-width: $control-border-width !default
 
 $button-padding-vertical: calc(0.5em - #{$button-border-width}) !default
 $button-padding-horizontal: 1em !default
 
-$button-hover-color: derived-variables.$link-hover !default
-$button-hover-border-color: derived-variables.$link-hover-border !default
+$button-hover-color: $link-hover !default
+$button-hover-border-color: $link-hover-border !default
 
-$button-focus-color: derived-variables.$link-focus !default
-$button-focus-border-color: derived-variables.$link-focus-border !default
+$button-focus-color: $link-focus !default
+$button-focus-border-color: $link-focus-border !default
 $button-focus-box-shadow-size: 0 0 0 0.125em !default
-$button-focus-box-shadow-color: functions.bulmaRgba(derived-variables.$link, 0.25) !default
+$button-focus-box-shadow-color: bulmaRgba($link, 0.25) !default
 
-$button-active-color: derived-variables.$link-active !default
-$button-active-border-color: derived-variables.$link-active-border !default
+$button-active-color: $link-active !default
+$button-active-border-color: $link-active-border !default
 
-$button-text-color: derived-variables.$text !default
+$button-text-color: $text !default
 $button-text-decoration: underline !default
-$button-text-hover-background-color: derived-variables.$background !default
-$button-text-hover-color: derived-variables.$text-strong !default
+$button-text-hover-background-color: $background !default
+$button-text-hover-color: $text-strong !default
 
 $button-ghost-background: none !default
 $button-ghost-border-color: transparent !default
-$button-ghost-color: derived-variables.$link !default
+$button-ghost-color: $link !default
 $button-ghost-decoration: none !default
-$button-ghost-hover-color: derived-variables.$link !default
+$button-ghost-hover-color: $link !default
 $button-ghost-hover-decoration: underline !default
 
-$button-disabled-background-color: derived-variables.$scheme-main !default
-$button-disabled-border-color: derived-variables.$border !default
+$button-disabled-background-color: $scheme-main !default
+$button-disabled-border-color: $border !default
 $button-disabled-shadow: none !default
 $button-disabled-opacity: 0.5 !default
 
-$button-static-color: derived-variables.$text-light !default
-$button-static-background-color: derived-variables.$scheme-main-ter !default
-$button-static-border-color: derived-variables.$border !default
+$button-static-color: $text-light !default
+$button-static-background-color: $scheme-main-ter !default
+$button-static-border-color: $border !default
 
-$button-colors: derived-variables.$colors !default
+$button-colors: $colors !default
 
 // The button sizes use mixins so they can be used at different breakpoints
 =button-small
   &:not(.is-rounded)
-    border-radius: initial-variables.$radius-small
-  font-size: derived-variables.$size-small
+    border-radius: $radius-small
+  font-size: $size-small
 =button-normal
-  font-size: derived-variables.$size-normal
+  font-size: $size-normal
 =button-medium
-  font-size: derived-variables.$size-medium
+  font-size: $size-medium
 =button-large
-  font-size: derived-variables.$size-large
+  font-size: $size-large
 
 .button
   @extend %control
@@ -88,11 +84,11 @@ $button-colors: derived-variables.$colors !default
       height: 1.5em
       width: 1.5em
     &:first-child:not(:last-child)
-      +mixins.ltr-property("margin", calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width}), false)
-      +mixins.ltr-property("margin", $button-padding-horizontal / 4)
+      +ltr-property("margin", calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width}), false)
+      +ltr-property("margin", $button-padding-horizontal / 4)
     &:last-child:not(:first-child)
-      +mixins.ltr-property("margin", $button-padding-horizontal / 4, false)
-      +mixins.ltr-property("margin", calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width}))
+      +ltr-property("margin", $button-padding-horizontal / 4, false)
+      +ltr-property("margin", calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width}))
     &:first-child:last-child
       margin-left: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
       margin-right: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
@@ -125,7 +121,7 @@ $button-colors: derived-variables.$colors !default
       color: $button-text-hover-color
     &:active,
     &.is-active
-      background-color: functions.bulmaDarken($button-text-hover-background-color, 5%)
+      background-color: bulmaDarken($button-text-hover-background-color, 5%)
       color: $button-text-hover-color
     &[disabled],
     fieldset[disabled] &
@@ -142,15 +138,15 @@ $button-colors: derived-variables.$colors !default
       color: $button-ghost-hover-color
       text-decoration: $button-ghost-hover-decoration
   @each $name, $pair in $button-colors
-    $color: list.nth($pair, 1)
-    $color-invert: list.nth($pair, 2)
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
     &.is-#{$name}
       background-color: $color
       border-color: transparent
       color: $color-invert
       &:hover,
       &.is-hovered
-        background-color: functions.bulmaDarken($color, 2.5%)
+        background-color: bulmaDarken($color, 2.5%)
         border-color: transparent
         color: $color-invert
       &:focus,
@@ -158,10 +154,10 @@ $button-colors: derived-variables.$colors !default
         border-color: transparent
         color: $color-invert
         &:not(:active)
-          box-shadow: $button-focus-box-shadow-size functions.bulmaRgba($color, 0.25)
+          box-shadow: $button-focus-box-shadow-size bulmaRgba($color, 0.25)
       &:active,
       &.is-active
-        background-color: functions.bulmaDarken($color, 5%)
+        background-color: bulmaDarken($color, 5%)
         border-color: transparent
         color: $color-invert
       &[disabled],
@@ -174,7 +170,7 @@ $button-colors: derived-variables.$colors !default
         color: $color
         &:hover,
         &.is-hovered
-          background-color: functions.bulmaDarken($color-invert, 5%)
+          background-color: bulmaDarken($color-invert, 5%)
         &[disabled],
         fieldset[disabled] &
           background-color: $color-invert
@@ -234,20 +230,20 @@ $button-colors: derived-variables.$colors !default
           box-shadow: none
           color: $color-invert
       // If light and dark colors are provided
-      @if list.length($pair) >= 4
-        $color-light: list.nth($pair, 3)
-        $color-dark: list.nth($pair, 4)
+      @if length($pair) >= 4
+        $color-light: nth($pair, 3)
+        $color-dark: nth($pair, 4)
         &.is-light
           background-color: $color-light
           color: $color-dark
           &:hover,
           &.is-hovered
-            background-color: functions.bulmaDarken($color-light, 2.5%)
+            background-color: bulmaDarken($color-light, 2.5%)
             border-color: transparent
             color: $color-dark
           &:active,
           &.is-active
-            background-color: functions.bulmaDarken($color-light, 5%)
+            background-color: bulmaDarken($color-light, 5%)
             border-color: transparent
             color: $color-dark
   // Sizes
@@ -274,7 +270,7 @@ $button-colors: derived-variables.$colors !default
     pointer-events: none
     &::after
       @extend %loader
-      +mixins.center(1em)
+      +center(1em)
       position: absolute !important
   &.is-static
     background-color: $button-static-background-color
@@ -283,7 +279,7 @@ $button-colors: derived-variables.$colors !default
     box-shadow: none
     pointer-events: none
   &.is-rounded
-    border-radius: initial-variables.$radius-rounded
+    border-radius: $radius-rounded
     padding-left: calc(#{$button-padding-horizontal} + 0.25em)
     padding-right: calc(#{$button-padding-horizontal} + 0.25em)
 
@@ -295,7 +291,7 @@ $button-colors: derived-variables.$colors !default
   .button
     margin-bottom: 0.5rem
     &:not(:last-child):not(.is-fullwidth)
-      +mixins.ltr-property("margin", 0.5rem)
+      +ltr-property("margin", 0.5rem)
   &:last-child
     margin-bottom: -0.5rem
   &:not(:last-child)
@@ -318,9 +314,9 @@ $button-colors: derived-variables.$colors !default
       &:not(:last-child)
         border-bottom-right-radius: 0
         border-top-right-radius: 0
-        +mixins.ltr-property("margin", -1px)
+        +ltr-property("margin", -1px)
       &:last-child
-        +mixins.ltr-property("margin", 0)
+        +ltr-property("margin", 0)
       &:hover,
       &.is-hovered
         z-index: 2

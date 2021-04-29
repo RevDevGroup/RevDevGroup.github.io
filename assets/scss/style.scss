@@ -8,18 +8,10 @@
 @import 'overrides';
 
 .has-background-image {
-    position: absolute;
-    overflow: hidden;
-    will-change: transform, opacity, filter;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    background-repeat: no-repeat;
-    z-index: -1;
-
-    &.circ-principal {
-      width: 30%;
-      max-width: 40%;
-      top: -5em;
-      right: -10em;
-    }
+  position: absolute;
+  top: -10rem;
+  right: -15vw;
+  width: 40vw;
+  max-width: 140vh;
+  z-index: -1;
 }

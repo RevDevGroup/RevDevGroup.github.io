@@ -1,35 +1,35 @@
-@use "../utilities/mixins"
+@import "../utilities/mixins"
 
 $displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
 
 @each $display in $displays
   .is-#{$display}
     display: #{$display} !important
-  +mixins.mobile
+  +mobile
     .is-#{$display}-mobile
       display: #{$display} !important
-  +mixins.tablet
+  +tablet
     .is-#{$display}-tablet
       display: #{$display} !important
-  +mixins.tablet-only
+  +tablet-only
     .is-#{$display}-tablet-only
       display: #{$display} !important
-  +mixins.touch
+  +touch
     .is-#{$display}-touch
       display: #{$display} !important
-  +mixins.desktop
+  +desktop
     .is-#{$display}-desktop
       display: #{$display} !important
-  +mixins.desktop-only
+  +desktop-only
     .is-#{$display}-desktop-only
       display: #{$display} !important
-  +mixins.widescreen
+  +widescreen
     .is-#{$display}-widescreen
       display: #{$display} !important
-  +mixins.widescreen-only
+  +widescreen-only
     .is-#{$display}-widescreen-only
       display: #{$display} !important
-  +mixins.fullhd
+  +fullhd
     .is-#{$display}-fullhd
       display: #{$display} !important
 
@@ -46,77 +46,77 @@ $displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
   white-space: nowrap !important
   width: 0.01em !important
 
-+mixins.mobile
++mobile
   .is-hidden-mobile
     display: none !important
 
-+mixins.tablet
++tablet
   .is-hidden-tablet
     display: none !important
 
-+mixins.tablet-only
++tablet-only
   .is-hidden-tablet-only
     display: none !important
 
-+mixins.touch
++touch
   .is-hidden-touch
     display: none !important
 
-+mixins.desktop
++desktop
   .is-hidden-desktop
     display: none !important
 
-+mixins.desktop-only
++desktop-only
   .is-hidden-desktop-only
     display: none !important
 
-+mixins.widescreen
++widescreen
   .is-hidden-widescreen
     display: none !important
 
-+mixins.widescreen-only
++widescreen-only
   .is-hidden-widescreen-only
     display: none !important
 
-+mixins.fullhd
++fullhd
   .is-hidden-fullhd
     display: none !important
 
 .is-invisible
   visibility: hidden !important
 
-+mixins.mobile
++mobile
   .is-invisible-mobile
     visibility: hidden !important
 
-+mixins.tablet
++tablet
   .is-invisible-tablet
     visibility: hidden !important
 
-+mixins.tablet-only
++tablet-only
   .is-invisible-tablet-only
     visibility: hidden !important
 
-+mixins.touch
++touch
   .is-invisible-touch
     visibility: hidden !important
 
-+mixins.desktop
++desktop
   .is-invisible-desktop
     visibility: hidden !important
 
-+mixins.desktop-only
++desktop-only
   .is-invisible-desktop-only
     visibility: hidden !important
 
-+mixins.widescreen
++widescreen
   .is-invisible-widescreen
     visibility: hidden !important
 
-+mixins.widescreen-only
++widescreen-only
   .is-invisible-widescreen-only
     visibility: hidden !important
 
-+mixins.fullhd
++fullhd
   .is-invisible-fullhd
     visibility: hidden !important

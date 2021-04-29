@@ -27,9 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 anime({
-  targets: '.circ-principal',
-  scale: { value: 1.1, duration: 3000, delay: 1300},
-  translateY: { value: 30, duration: 5000 },
+  targets: '.cls-1',
+  scale: { value: 1.1, duration: 4000},
+  translateY: { value: 30, duration: 6000 },
+  easing: 'easeInOutQuad',
+  direction: 'alternate',
+  loop: true,
+});
+
+anime({
+  targets: '.cls-2',
+  translateX: { value: 30, duration: 6000 },
   easing: 'easeInOutQuad',
   direction: 'alternate',
   loop: true,

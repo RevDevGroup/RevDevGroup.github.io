@@ -1,16 +1,11 @@
-@use "sass:color"
-@use "sass:list"
-@use "sass:meta"
-@use "../utilities/mixins"
-@use "../utilities/derived-variables"
-@use "../utilities/functions"
+@import "../utilities/mixins"
 
 $hero-body-padding: 3rem 1.5rem !default
 $hero-body-padding-small: 1.5rem !default
 $hero-body-padding-medium: 9rem 1.5rem !default
 $hero-body-padding-large: 18rem 1.5rem !default
 
-$hero-colors: derived-variables.$colors !default
+$hero-colors: $colors !default
 
 // Main container
 .hero
@@ -25,8 +20,8 @@ $hero-colors: derived-variables.$colors !default
       border-bottom: none
   // Colors
   @each $name, $pair in $hero-colors
-    $color: list.nth($pair, 1)
-    $color-invert: list.nth($pair, 2)
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
     &.is-#{$name}
       background-color: $color
       color: $color-invert
@@ -36,21 +31,21 @@ $hero-colors: derived-variables.$colors !default
       .title
         color: $color-invert
       .subtitle
-        color: functions.bulmaRgba($color-invert, 0.9)
+        color: bulmaRgba($color-invert, 0.9)
         a:not(.button),
         strong
           color: $color-invert
       .navbar-menu
-        +mixins.touch
+        +touch
           background-color: $color
       .navbar-item,
       .navbar-link
-        color: functions.bulmaRgba($color-invert, 0.7)
+        color: bulmaRgba($color-invert, 0.7)
       a.navbar-item,
       .navbar-link
         &:hover,
         &.is-active
-          background-color: functions.bulmaDarken($color, 5%)
+          background-color: bulmaDarken($color, 5%)
           color: $color-invert
       .tabs
         a
@@ -66,7 +61,7 @@ $hero-colors: derived-variables.$colors !default
           a
             color: $color-invert
             &:hover
-              background-color: functions.bulmaRgba(derived-variables.$scheme-invert, 0.1)
+              background-color: bulmaRgba($scheme-invert, 0.1)
           li.is-active a
             &,
             &:hover
@@ -74,12 +69,12 @@ $hero-colors: derived-variables.$colors !default
               border-color: $color-invert
               color: $color
       // Modifiers
-      @if meta.type-of($color) == 'color'
+      @if type-of($color) == 'color'
         &.is-bold
-          $gradient-top-left: color.adjust(color.adjust(color.adjust($color, $hue: -10deg), $saturation: 10%), $lightness: -10%)
-          $gradient-bottom-right: color.adjust(color.adjust(color.adjust($color, $hue: 10deg), $saturation: 5%), $lightness: 5%)
+          $gradient-top-left: darken(saturate(adjust-hue($color, -10deg), 10%), 10%)
+          $gradient-bottom-right: lighten(saturate(adjust-hue($color, 10deg), 5%), 5%)
           background-image: linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%)
-          +mixins.mobile
+          +mobile
             .navbar-menu
               background-image: linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%)
   // Sizes
@@ -87,11 +82,11 @@ $hero-colors: derived-variables.$colors !default
     .hero-body
       padding: $hero-body-padding-small
   &.is-medium
-    +mixins.tablet
+    +tablet
       .hero-body
         padding: $hero-body-padding-medium
   &.is-large
-    +mixins.tablet
+    +tablet
       .hero-body
         padding: $hero-body-padding-large
   &.is-halfheight,
@@ -124,22 +119,22 @@ $hero-colors: derived-variables.$colors !default
   &.is-transparent
     opacity: 0.3
   // Responsiveness
-  +mixins.mobile
+  +mobile
     display: none
 
 .hero-buttons
   margin-top: 1.5rem
   // Responsiveness
-  +mixins.mobile
+  +mobile
     .button
       display: flex
       &:not(:last-child)
         margin-bottom: 0.75rem
-  +mixins.tablet
+  +tablet
     display: flex
     justify-content: center
     .button:not(:last-child)
-      +mixins.ltr-property("margin", 1.5rem)
+      +ltr-property("margin", 1.5rem)
 
 // Containers
 

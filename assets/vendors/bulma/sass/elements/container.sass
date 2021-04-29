@@ -1,9 +1,7 @@
-@use "sass:math"
-@use "../utilities/mixins"
-@use "../utilities/initial-variables"
+@import "../utilities/mixins"
 
-$container-offset: (2 * initial-variables.$gap) !default
-$container-max-width: initial-variables.$fullhd !default
+$container-offset: (2 * $gap) !default
+$container-max-width: $fullhd !default
 
 .container
   flex-grow: 1
@@ -12,20 +10,20 @@ $container-max-width: initial-variables.$fullhd !default
   width: auto
   &.is-fluid
     max-width: none !important
-    padding-left: initial-variables.$gap
-    padding-right: initial-variables.$gap
+    padding-left: $gap
+    padding-right: $gap
     width: 100%
-  +mixins.desktop
-    max-width: initial-variables.$desktop - $container-offset
-  +mixins.until-widescreen
+  +desktop
+    max-width: $desktop - $container-offset
+  +until-widescreen
     &.is-widescreen:not(.is-max-desktop)
-      max-width: math.min(initial-variables.$widescreen, $container-max-width) - $container-offset
-  +mixins.until-fullhd
+      max-width: min($widescreen, $container-max-width) - $container-offset
+  +until-fullhd
     &.is-fullhd:not(.is-max-desktop):not(.is-max-widescreen)
-      max-width: math.min(initial-variables.$fullhd, $container-max-width) - $container-offset
-  +mixins.widescreen
+      max-width: min($fullhd, $container-max-width) - $container-offset
+  +widescreen
     &:not(.is-max-desktop)
-      max-width: math.min(initial-variables.$widescreen, $container-max-width) - $container-offset
-  +mixins.fullhd
+      max-width: min($widescreen, $container-max-width) - $container-offset
+  +fullhd
     &:not(.is-max-desktop):not(.is-max-widescreen)
-      max-width: math.min(initial-variables.$fullhd, $container-max-width) - $container-offset
+      max-width: min($fullhd, $container-max-width) - $container-offset

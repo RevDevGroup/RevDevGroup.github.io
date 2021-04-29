@@ -1,6 +1,4 @@
-@use "../utilities/mixins"
-@use "../utilities/derived-variables"
-@use "../utilities/initial-variables"
+@import "../utilities/mixins"
 
 .block
   @extend %block
@@ -17,7 +15,7 @@
 
 .highlight
   @extend %block
-  font-weight: initial-variables.$weight-normal
+  font-weight: $weight-normal
   max-width: 100%
   overflow: hidden
   padding: 0
@@ -30,10 +28,10 @@
 
 .number
   align-items: center
-  background-color: derived-variables.$background
-  border-radius: initial-variables.$radius-rounded
+  background-color: $background
+  border-radius: $radius-rounded
   display: inline-flex
-  font-size: derived-variables.$size-medium
+  font-size: $size-medium
   height: 2em
   justify-content: center
   margin-right: 1.5rem

@@ -1,8 +1,7 @@
-@use "derived-variables"
-@use "initial-variables"
+@import "derived-variables"
 
-$control-radius: initial-variables.$radius !default
-$control-radius-small: initial-variables.$radius-small !default
+$control-radius: $radius !default
+$control-radius-small: $radius-small !default
 
 $control-border-width: 1px !default
 
@@ -20,7 +19,7 @@ $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default
   border-radius: $control-radius
   box-shadow: none
   display: inline-flex
-  font-size: derived-variables.$size-normal
+  font-size: $size-normal
   height: $control-height
   justify-content: flex-start
   line-height: $control-line-height
@@ -43,8 +42,8 @@ $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default
 // The controls sizes use mixins so they can be used at different breakpoints
 =control-small
   border-radius: $control-radius-small
-  font-size: derived-variables.$size-small
+  font-size: $size-small
 =control-medium
-  font-size: derived-variables.$size-medium
+  font-size: $size-medium
 =control-large
-  font-size: derived-variables.$size-large
+  font-size: $size-large
