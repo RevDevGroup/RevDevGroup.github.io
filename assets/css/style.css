@@ -2582,7 +2582,7 @@ a.tag:hover {
   margin-top: -1.25rem;
 }
 .title.is-1 {
-  font-size: 5em;
+  font-size: 3rem;
 }
 .title.is-2 {
   font-size: 2.5rem;
@@ -2617,7 +2617,7 @@ a.tag:hover {
   margin-top: -1.25rem;
 }
 .subtitle.is-1 {
-  font-size: 5em;
+  font-size: 3rem;
 }
 .subtitle.is-2 {
   font-size: 2.5rem;
@@ -8660,7 +8660,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 .is-size-1 {
-  font-size: 5em !important;
+  font-size: 3rem !important;
 }
 
 .is-size-2 {
@@ -8689,7 +8689,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (max-width: 768px) {
   .is-size-1-mobile {
-    font-size: 5em !important;
+    font-size: 3rem !important;
   }
 
   .is-size-2-mobile {
@@ -8718,7 +8718,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media screen and (min-width: 769px), print {
   .is-size-1-tablet {
-    font-size: 5em !important;
+    font-size: 3rem !important;
   }
 
   .is-size-2-tablet {
@@ -8747,7 +8747,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media screen and (max-width: 1023px) {
   .is-size-1-touch {
-    font-size: 5em !important;
+    font-size: 3rem !important;
   }
 
   .is-size-2-touch {
@@ -8776,7 +8776,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media screen and (min-width: 1024px) {
   .is-size-1-desktop {
-    font-size: 5em !important;
+    font-size: 3rem !important;
   }
 
   .is-size-2-desktop {
@@ -8805,7 +8805,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media screen and (min-width: 1216px) {
   .is-size-1-widescreen {
-    font-size: 5em !important;
+    font-size: 3rem !important;
   }
 
   .is-size-2-widescreen {
@@ -8834,7 +8834,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media screen and (min-width: 1408px) {
   .is-size-1-fullhd {
-    font-size: 5em !important;
+    font-size: 3rem !important;
   }
 
   .is-size-2-fullhd {
@@ -10465,6 +10465,10 @@ body > .navbar {
 }
 .tabs.is-toggle li + li {
   margin-left: -2px;
+}
+
+.title.is-1 {
+  font-size: 5rem;
 }
 
 .has-background-image {
