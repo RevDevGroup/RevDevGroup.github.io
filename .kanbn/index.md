@@ -12,12 +12,14 @@ completedColumns:
 ## Todo
 
 - [use-rule](tasks/use-rule.md)
+- [a-adir-lib-de-correo](tasks/a-adir-lib-de-correo.md)
 
 ## In Progress
 
 - [add-proyects-section](tasks/add-proyects-section.md)
-- [a-adir-section-de-equipo](tasks/a-adir-section-de-equipo.md)
+- [add-custom-cursor](tasks/add-custom-cursor.md)
 
 ## Done
 
 - [cambiar-fuente](tasks/cambiar-fuente.md)
+- [a-adir-section-de-equipo](tasks/a-adir-section-de-equipo.md)

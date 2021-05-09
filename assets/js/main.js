@@ -1,3 +1,13 @@
+options = {
+  "cursorOuter": "disable",
+  "hoverEffect": "pointer-overlay",
+  "hoverItemMove": false,
+  "defaultCursor": false,
+  "outerWidth": 30,
+  "outerHeight": 30
+};
+magicMouse(options);
+
 // Toggle
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -8,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if ($navbarBurgers.length > 0) {
 
     // Add a click event on each of them
-    $navbarBurgers.forEach( el => {
+    $navbarBurgers.forEach(el => {
       el.addEventListener('click', () => {
 
         // Get the target from the "data-target" attribute
@@ -28,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 anime({
   targets: '.cls-1',
-  scale: { value: 1.1, duration: 4000},
+  scale: { value: 1.1, duration: 4000 },
   translateY: { value: 30, duration: 6000 },
   easing: 'easeInOutQuad',
   direction: 'alternate',
