@@ -17,9 +17,9 @@ completedColumns:
 ## In Progress
 
 - [add-proyects-section](tasks/add-proyects-section.md)
-- [add-custom-cursor](tasks/add-custom-cursor.md)
 
 ## Done
 
 - [cambiar-fuente](tasks/cambiar-fuente.md)
 - [a-adir-section-de-equipo](tasks/a-adir-section-de-equipo.md)
+- [add-custom-cursor](tasks/add-custom-cursor.md)
