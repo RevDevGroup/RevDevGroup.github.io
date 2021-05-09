@@ -12,9 +12,11 @@ completedColumns:
 ## Todo
 
 - [use-rule](tasks/use-rule.md)
-- [add-proyects-section](tasks/add-proyects-section.md)
 
 ## In Progress
+
+- [add-proyects-section](tasks/add-proyects-section.md)
+- [a-adir-section-de-equipo](tasks/a-adir-section-de-equipo.md)
 
 ## Done
 

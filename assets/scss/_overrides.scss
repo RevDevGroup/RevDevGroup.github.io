@@ -111,10 +111,6 @@ a {
     transition: all 300ms ease;
 }
 
-.message-header {
-    font-weight: $weight-bold;
-}
-
 .message-body {
     border-width: $border-width;
 }
@@ -139,13 +135,6 @@ a {
             background-color: $navbar-dropdown-background-color;
             border-radius: 0 0 $radius $radius;
         }
-        
-        .navbar-item,
-        .navbar-link {
-            &:not(.is-active):not(:hover) {
-                color: $button-color;
-            }
-        }
     }
     
     &.is-transparent {
@@ -153,9 +142,7 @@ a {
         color: $text;
         
         .navbar-item,
-        .navbar-link {
-            color: $button-color;
-            
+        .navbar-link {            
             &:hover {
                 color: $link;
                 background-color: transparent;
@@ -256,7 +243,8 @@ body > .navbar {
     }
 }
 
-.title.is-1 {
-    font-size: 5rem;
+.title {
+    &.is-1 {
+        font-size: 5rem;
+    }
 }
-

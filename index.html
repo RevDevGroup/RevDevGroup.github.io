@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-  <title>RevDev Software Group</title>
+  <title>Revdev Software Group</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Software development group focused on server applications and web development">
   <meta name="author" content="revdev">
-  <meta name="copyright" content="RevDev Group">
+  <meta name="copyright" content="Revdev group">
   <link rel="stylesheet" href="assets/css/inter/inter.css">
   <link rel="stylesheet" href="assets/css/line-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -15,13 +15,13 @@
 
 <body style="overflow-x: hidden;">
   <div class="container is-fluid">
-    <nav class="navbar is-transparent is-spaced" role="navigation">
+    <nav class="navbar is-transparent is-spaced">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="#">
-            <img src="assets/img/revdev.svg" width="92" alt="revdev_logo">
+            <img src="assets/img/revdev.svg" width="120px" alt="revdev_logo">
           </a>
-          <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+          <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -31,11 +31,12 @@
           <div class="navbar-start has-text-weight-bold">
             <a class="navbar-item" href="#">Inicio</a>
             <a class="navbar-item" href="#">Servicios</a>
-            <a class="navbar-item" href="#">Projectos</a>
+            <a class="navbar-item" href="#proyectos">Projectos</a>
             <a class="navbar-item" href="#">Laboratorio</a>
+            <a class="navbar-item" href="#equipo">Nuestro Equipo</a>
             <a class="navbar-item" href="#contact">Contáctanos</a>
-            <a class="navbar-item" href="#">
-              <i class="lab la-github-alt is-size-5" style="margin-right: 0.3rem;"></i>Github
+            <a class="navbar-item button icon-text" href="https://github.com/RevDevGroup" target="_blank">
+              <i class="lab la-github-alt icon" style="margin-right: 0.3rem;"></i>Github
             </a>
           </div>
         </div>
@@ -46,11 +47,11 @@
         <defs>
           <style>
             .cls-1 {
-              fill: #f06;
+              fill: hsl(336, 100%, 50%);
             }
 
             .cls-2 {
-              fill: #263950;
+              fill: hsl(213, 36%, 23%);
             }
           </style>
         </defs>
@@ -65,14 +66,66 @@
           <h2 class="subtitle">
             Grupo de desarrollo enfocado en aplicaciones de servidor y desarrollo web
           </h2>
-          <a class="control button is-primary" href="#">Conocer Más</a>
+          <a class="control button is-primary has-text-weight-medium" href="#">Conocer Más</a>
         </div>
       </div>
     </section>
+
+    <section class="section" id="proyectos">
+      <div class="container py-4">
+        <h2 class="title has-text-centered is-2 mb-6">Proyectos</h2>
+        <div class="columns is-multiline">
+          <div class="column is-4"><a href="#"><img src="" alt=""></a>
+          </div>
+          <div class="column is-4"><a href="#"><img src="" alt=""></a>
+          </div>
+          <div class="column is-4"><a href="#"><img src="" alt=""></a>
+          </div>
+          <div class="column is-4"><a href="#"><img src="" alt=""></a>
+          </div>
+          <div class="column is-4"><a href="#"><img src="" alt=""></a>
+          </div>
+          <div class="column is-4"><a href="#"><img src="" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="equipo">
+      <div class="container has-text-centered">
+        <h2 class="title is-2 mb-6">Nuestro Equipo</h2>
+        <p class="subtitle">Somos los que impulsamos la maquinaria del desarrollo en revdev</p>
+        <div class="columns py-6">
+          <div class="column is-4 is-offset-1">
+            <div class="level">
+              <div class="level-item">
+                <figure class="image is-128x128"><img class="is-rounded"
+                    src="assets/img/jimscope.png" alt=""></figure>
+              </div>
+            </div>
+            <h5 class="title is-5">Jimmy A. Pérez Díaz</h5>
+            <p class="subtitle is-6">CEO</p>
+            <p>Soy un tipo de pocas palabras (escritas), así que por ahora no hay nada aquí, sigue bajando</p>
+          </div>
+          <div class="column is-4 is-offset-2">
+            <div class="level">
+              <div class="level-item">
+                <figure class="image is-128x128"><img class="is-rounded"
+                    src="assets/img/jimscope.png" alt=""></figure>
+              </div>
+            </div>
+            <h5 class="title is-5">Jorge A. Jiménez Luna</h5>
+            <p class="subtitle is-6">CTO</p>
+            <p>Este es peor escriendo una biografía que el de la izquierda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="container py-4">
         <h2 class="title has-text-centered is-2 mb-6">Contáctanos</h2>
-        <div class="columns">
+        <div class="columns py-6">
           <div class="column is-6">
             <h4 class="title is-spaced is-4">Hablemos sobre tecnología</h4>
             <p class="subtitle">
@@ -82,7 +135,7 @@
             <div>
               <div class="media">
                 <div class="media-left">
-                  <i class="la la-phone"></i>
+                  <i class="la la-phone is-size-4"></i>
                 </div>
                 <div class="media-content">
                   <div class="content">
@@ -92,7 +145,7 @@
               </div>
               <div class="media">
                 <div class="media-left">
-                    <i class="la la-mail-bulk"></i>
+                  <i class="la la-mail-bulk is-size-4"></i>
                 </div>
                 <div class="media-content">
                   <div class="content">
@@ -102,7 +155,7 @@
               </div>
             </div>
           </div>
-          <div class="column is-5 is-offset-1">
+          <div class="column is-offset-1">
             <form>
               <div class="field">
                 <div class="control">
@@ -124,6 +177,7 @@
         </div>
       </div>
     </section>
+
   </div>
   <footer class="footer">
     <div class="container">
@@ -135,27 +189,28 @@
       <hr>
       <div class="columns has-text-centered">
         <div class="column is-size-4 has-text-left-tablet">
-            <a href="#">
-              <i class="lab la-twitter"></i>
-            </a>
-            <a href="#">
-              <i class="lab la-telegram-plane"></i>
-            </a>
-            <a href="#">
-              <i class="lab la-facebook"></i>
-            </a>
-            <a href="#">
-              <i class="lab la-instagram"></i>
-            </a>
+          <a href="#">
+            <i class="lab la-twitter"></i>
+          </a>
+          <a href="https://t.me/TheRevdevGroup" target="_blank">
+            <i class="lab la-telegram-plane"></i>
+          </a>
+          <a href="#">
+            <i class="lab la-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="lab la-instagram"></i>
+          </a>
         </div>
         <div class="column has-text-right-tablet">
-          <p class="subtitle is-6">&copy; 2021 RevDev Group. All right reserved.</p>
+          <p class="subtitle is-6">&copy; <script>document.write(new Date().getFullYear())</script> Revdev Group. All right reserved.</p>
         </div>
       </div>
     </div>
   </footer>
+
+  <script src="assets/js/anime.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
-<script src="assets/js/anime.min.js"></script>
-<script src="assets/js/main.js"></script>
 
 </html>
