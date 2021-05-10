@@ -1,5 +1,3 @@
-'use strict'
-
 options = {
   "cursorOuter": "disable",
   "hoverEffect": "pointer-overlay",
