@@ -157,20 +157,21 @@
             </div>
           </div>
           <div class="column is-offset-1">
-            <form>
+            <form action="https://mailer-kohl.vercel.app/api/mail" method="POST" x-data='contactForm()' @submit.prevent="submitData">
+              <p x-text="message_notify"></p>
               <div class="field">
                 <div class="control">
-                  <input class="input" type="email" placeholder="Email">
+                  <input class="input" type="email" placeholder="Email" x-model='formData.email'>
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..."></textarea>
+                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..." x-model='formData.message'></textarea>
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <button class="button is-primary is-fullwidth magic-hover" type="submit">Enviar</button>
+                  <button class="button is-primary is-fullwidth magic-hover" type="submit" x-text="buttonLabel" :disabled="Loading">Enviar</button>
                 </div>
               </div>
             </form>
@@ -209,7 +210,7 @@
       </div>
     </div>
   </footer>
-
+  <script src="assets/js/alpine.js"></script>
   <script src="assets/js/anime.min.js"></script>
   <script src="assets/js/magic_mouse.js"></script>
   <script src="assets/js/main.js"></script>

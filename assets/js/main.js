@@ -35,6 +35,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+function contactForm() {
+  return {
+    formData: {
+      email: '',
+      subject: '',
+      message: ''
+    },
+    message_notify: '',
+
+    loading: false,
+    buttonLabel: 'Submit',
+
+    submitData() {
+      this.message = ''
+
+      fetch('https://mailer-kohl.vercel.app/api/mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.formData)
+      })
+        .then(() => {
+          this.message_notify = "Mensaje enviado correctamente"
+        })
+        .catch(() => {
+          this.message_notify = "Oh Oh, Ha ocurrido un error!"
+        })
+        .finally(() => {
+          this.loading = false;
+          this.buttonLabel = 'Enviar'
+        })
+    }
+  }
+}
 
 anime({
   targets: '.cls-1',
