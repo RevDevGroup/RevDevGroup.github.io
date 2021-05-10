@@ -39,8 +39,9 @@ function contactForm() {
   return {
     formData: {
       email: '',
-      subject: '',
-      message: ''
+      subject: 'Contact',
+      message: '',
+      honeypot: ''
     },
     message_notify: '',
 
