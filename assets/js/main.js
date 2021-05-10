@@ -39,6 +39,7 @@ function contactForm() {
   return {
     formData: {
       email: '',
+      name: 'revdev webpage';
       subject: 'Contact',
       message: '',
       honeypot: ''
