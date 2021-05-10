@@ -158,16 +158,16 @@
             </div>
           </div>
           <div class="column is-offset-1">
-            <form action="./" method="POST" x-data='contactForm()' @submit.prevent="submitData">
+            <form">
               <p x-text="message_notify"></p>
               <div class="field">
                 <div class="control">
-                  <input class="input" type="email" placeholder="Email" x-model='formData.email'>
+                  <input class="input" type="email" placeholder="Email">
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..." x-model='formData.message'></textarea>
+                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..."></textarea>
                 </div>
               </div>
               <div class="field">
