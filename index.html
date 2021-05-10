@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/css/line-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/magic-mouse.css">
+  <script src="assets/js/alpine.js"></script>
 </head>
 
 <body style="overflow-x: hidden;">
@@ -157,7 +158,8 @@
             </div>
           </div>
           <div class="column is-offset-1">
-            <form>
+            <form">
+              <p x-text="message_notify"></p>
               <div class="field">
                 <div class="control">
                   <input class="input" type="email" placeholder="Email">
@@ -209,7 +211,6 @@
       </div>
     </div>
   </footer>
-
   <script src="assets/js/anime.min.js"></script>
   <script src="assets/js/magic_mouse.js"></script>
   <script src="assets/js/main.js"></script>

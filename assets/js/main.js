@@ -1,3 +1,5 @@
+'use strict'
+
 options = {
   "cursorOuter": "disable",
   "hoverEffect": "pointer-overlay",
@@ -34,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
 
 anime({
   targets: '.cls-1',
