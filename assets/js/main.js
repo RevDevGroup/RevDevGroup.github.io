@@ -1,3 +1,5 @@
+'use strict'
+
 options = {
   "cursorOuter": "disable",
   "hoverEffect": "pointer-overlay",
@@ -35,39 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function contactForm() {
-  return {
-    formData: {
-      email: '',
-      name: 'revdev webpage';
-      subject: 'Contact',
-      message: '',
-      honeypot: ''
-    },
-    message_notify: '',
-
-    buttonLabel: 'Submit',
-
-    submitData() {
-      this.message = ''
-
-      fetch('https://mailer-kohl.vercel.app/api/mail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(this.formData)
-      })
-        .then(() => {
-          this.message_notify = "Mensaje enviado correctamente"
-        })
-        .catch(() => {
-          this.message_notify = "Oh Oh, Ha ocurrido un error!"
-        })
-    }
-  }
-}
-
 anime({
   targets: '.cls-1',
   scale: { value: 1.1, duration: 4000 },
@@ -84,3 +53,20 @@ anime({
   direction: 'alternate',
   loop: true,
 });
+
+function contactForm() {
+  fetch('https://mailer-kohl.vercel.app/api/mail', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin' : 'https://revdev.cc',
+  },
+  body: JSON.stringify({
+    email: '',
+    name: 'WebPage',
+    subject: 'Contact',
+    message: '',
+    honeypot: ''
+  })
+})
+}
