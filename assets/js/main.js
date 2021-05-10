@@ -53,20 +53,3 @@ anime({
   direction: 'alternate',
   loop: true,
 });
-
-function contactForm() {
-  fetch('https://mailer-kohl.vercel.app/api/mail', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin' : 'https://revdev.cc',
-  },
-  body: JSON.stringify({
-    email: '',
-    name: 'WebPage',
-    subject: 'Contact',
-    message: '',
-    honeypot: ''
-  })
-})
-}
