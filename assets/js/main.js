@@ -45,7 +45,6 @@ function contactForm() {
     },
     message_notify: '',
 
-    loading: false,
     buttonLabel: 'Submit',
 
     submitData() {
@@ -63,10 +62,6 @@ function contactForm() {
         })
         .catch(() => {
           this.message_notify = "Oh Oh, Ha ocurrido un error!"
-        })
-        .finally(() => {
-          this.loading = false;
-          this.buttonLabel = 'Enviar'
         })
     }
   }
