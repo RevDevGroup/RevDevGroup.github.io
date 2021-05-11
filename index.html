@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="assets/css/line-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/magic-mouse.css">
-  <script src="assets/js/alpine.js"></script>
+  <script src="assets/js/vue.global.prod.js"></script>
 </head>
 
 <body style="overflow-x: hidden;">
-  <div class="container is-fluid">
+  <div class="container is-fluid" id="app">
     <nav class="navbar is-transparent is-spaced">
       <div class="container">
         <div class="navbar-brand">
@@ -45,9 +45,9 @@
       </div>
     </nav>
     <div class="is-hidden-touch is-block has-background-image">
-      <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 810">
+      <svg version="1.1" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 810">
         <defs>
-          <style>
+          <svg:style>
             .cls-1 {
               fill: hsl(336, 100%, 50%);
             }
@@ -55,7 +55,7 @@
             .cls-2 {
               fill: hsl(213, 36%, 23%);
             }
-          </style>
+          </svg:style>
         </defs>
         <circle class="cls-1" cx="278" cy="332" r="278" />
         <circle class="cls-2" cx="302" cy="278" r="278" />
@@ -158,15 +158,15 @@
             </div>
           </div>
           <div class="column is-offset-1">
-            <form>
+            <form @submit.prevent="sendForm">
               <div class="field">
                 <div class="control">
-                  <input class="input" type="email" placeholder="Email">
+                  <input class="input" type="email" placeholder="Email" v-model="email" required>
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..."></textarea>
+                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..." v-model="message" maxlength="1000" required></textarea>
                 </div>
               </div>
               <div class="field">
@@ -174,12 +174,20 @@
                   <button class="button is-primary is-fullwidth magic-hover" type="submit">Enviar</button>
                 </div>
               </div>
+              <div class="notification is-success" :class="{'is-hidden': !success}">
+                <button class="delete" @click.prevent="clearSuccess"></button>
+                Mensaje enviado correctamente!
+              </div>
+
+              <div class="notification is-danger" :class="{'is-hidden': !failure}">
+                <button class="delete" @click.prevent="clearFailure"></button>
+                Error al enviar el mensaje!
+              </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-
   </div>
   <footer class="footer">
     <div class="container">

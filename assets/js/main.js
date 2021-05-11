@@ -1,3 +1,55 @@
+const app = Vue.createApp({
+  data() {
+    return {
+      mailerUrl: 'https://mailer-tau.vercel.app',
+      email: '',
+      name: 'User',
+      subject: 'Website contact 🚀',
+      message: '',
+      honeypot: '',
+      success: false,
+      failure: false
+    }
+  },
+  methods: {
+    clearSuccess: function() {
+      this.success = false
+    },
+
+    clearFailure: function() {
+      this.failure = false
+    },
+
+    sendForm: async function() {
+      const url = `${this.mailerUrl}/api/mail`
+      const data = {
+        email: this.email,
+        name: this.name,
+        subject: this.subject,
+        message: this.message,
+        honeypot: this.honeypot
+      }
+
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+
+        this.success = response.ok
+        this.failure = !response.ok
+      } catch(e) {
+        this.failure = true
+      }
+    }
+  }
+})
+
+app.mount('#app');
+
 options = {
   "cursorOuter": "disable",
   "hoverEffect": "pointer-overlay",
