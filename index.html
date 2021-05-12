@@ -44,17 +44,17 @@
       </div>
     </nav>
     <div class="is-hidden-touch is-block has-background-image">
-      <svg version="1.1" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 810">
+      <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 810">
         <defs>
-          <svg:style>
+          <style>
             .cls-1 {
-              fill: hsl(336, 100%, 50%);
+            fill: hsl(336, 100%, 50%);
             }
 
             .cls-2 {
-              fill: hsl(213, 36%, 23%);
+            fill: hsl(213, 36%, 23%);
             }
-          </svg:style>
+          </style>
         </defs>
         <circle class="cls-1" cx="278" cy="332" r="278" />
         <circle class="cls-2" cx="302" cy="278" r="278" />
@@ -100,8 +100,7 @@
           <div class="column is-4 is-offset-1">
             <div class="level">
               <div class="level-item">
-                <figure class="image is-128x128"><img class="is-rounded"
-                    src="assets/img/jimscope.png" alt=""></figure>
+                <figure class="image is-128x128"><img class="is-rounded" src="assets/img/jimscope.png" alt=""></figure>
               </div>
             </div>
             <h5 class="title is-5">Jimmy A. Pérez Díaz</h5>
@@ -111,13 +110,12 @@
           <div class="column is-4 is-offset-2">
             <div class="level">
               <div class="level-item">
-                <figure class="image is-128x128"><img class="is-rounded"
-                    src="assets/img/jimscope.png" alt=""></figure>
+                <figure class="image is-128x128"><img class="is-rounded" src="assets/img/jimscope.png" alt=""></figure>
               </div>
             </div>
             <h5 class="title is-5">Jorge A. Jiménez Luna</h5>
             <p class="subtitle is-6">CTO</p>
-            <p>Este es peor escriendo una biografía que el de la izquierda.</p>
+            <p>Este es peor escribiendo una biografía que el anterior.</p>
           </div>
         </div>
       </div>
@@ -157,30 +155,21 @@
             </div>
           </div>
           <div class="column is-offset-1">
-            <form @submit.prevent="sendForm">
+            <form>
               <div class="field">
                 <div class="control">
-                  <input class="input" type="email" placeholder="Email" v-model="email" required>
+                  <input class="input" type="email" placeholder="Email" required>
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..." v-model="message" maxlength="1000" required></textarea>
+                  <textarea class="textarea" rows="5" placeholder="Escribenos algo..." required></textarea>
                 </div>
               </div>
               <div class="field">
                 <div class="control">
                   <button class="button is-primary is-fullwidth magic-hover" type="submit">Enviar</button>
                 </div>
-              </div>
-              <div class="notification is-success" :class="{'is-hidden': !success}">
-                <button class="delete" @click.prevent="clearSuccess"></button>
-                Mensaje enviado correctamente!
-              </div>
-
-              <div class="notification is-danger" :class="{'is-hidden': !failure}">
-                <button class="delete" @click.prevent="clearFailure"></button>
-                Error al enviar el mensaje!
               </div>
             </form>
           </div>
@@ -212,7 +201,9 @@
           </a>
         </div>
         <div class="column has-text-right-tablet">
-          <p class="subtitle is-6">&copy; <script>document.write(new Date().getFullYear())</script> Revdev Group. All right reserved.</p>
+          <p class="subtitle is-6">&copy;
+            <script>document.write(new Date().getFullYear())</script> Revdev Group. All right reserved.
+          </p>
         </div>
       </div>
     </div>
